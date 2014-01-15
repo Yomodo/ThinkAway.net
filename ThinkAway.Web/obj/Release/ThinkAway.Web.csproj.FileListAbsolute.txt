@@ -1,0 +1,17 @@
+C:\Users\Lsong\Dropbox\Projects\ThinkAway\ThinkAway.Web\bin\Release\ThinkAway.Web.dll
+C:\Users\Lsong\Dropbox\Projects\ThinkAway\ThinkAway.Web\bin\Release\ThinkAway.Web.pdb
+C:\Users\Lsong\Dropbox\Projects\ThinkAway\ThinkAway.Web\bin\Release\ThinkAway.dll
+C:\Users\Lsong\Dropbox\Projects\ThinkAway\ThinkAway.Web\bin\Release\MySql.Data.dll
+C:\Users\Lsong\Dropbox\Projects\ThinkAway\ThinkAway.Web\bin\Release\System.Data.SQLite.dll
+C:\Users\Lsong\Dropbox\Projects\ThinkAway\ThinkAway.Web\bin\Release\ThinkAway.pdb
+C:\Users\Lsong\Dropbox\Projects\ThinkAway\ThinkAway.Web\obj\Release\ThinkAway.Web.dll
+C:\Users\Lsong\Dropbox\Projects\ThinkAway\ThinkAway.Web\obj\Release\ThinkAway.Web.pdb
+D:\Dropbox\Projects\ThinkAway\ThinkAway.Web\bin\Release\ThinkAway.Web.dll
+D:\Dropbox\Projects\ThinkAway\ThinkAway.Web\bin\Release\ThinkAway.Web.pdb
+D:\Dropbox\Projects\ThinkAway\ThinkAway.Web\bin\Release\ThinkAway.dll
+D:\Dropbox\Projects\ThinkAway\ThinkAway.Web\bin\Release\MySql.Data.dll
+D:\Dropbox\Projects\ThinkAway\ThinkAway.Web\bin\Release\System.Data.SQLite.dll
+D:\Dropbox\Projects\ThinkAway\ThinkAway.Web\bin\Release\ThinkAway.pdb
+D:\Dropbox\Projects\ThinkAway\ThinkAway.Web\obj\Release\ResolveAssemblyReference.cache
+D:\Dropbox\Projects\ThinkAway\ThinkAway.Web\obj\Release\ThinkAway.Web.dll
+D:\Dropbox\Projects\ThinkAway\ThinkAway.Web\obj\Release\ThinkAway.Web.pdb

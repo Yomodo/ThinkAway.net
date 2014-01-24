@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53F6EFA9-B696-4448-8EC8-5140BA208416}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ThinkAway.Plus</RootNamespace>
+    <AssemblyName>ThinkAway.Plus</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Google\GoogleTranslate.cs" />
+    <Compile Include="Google\GoogleWeather.cs" />
+    <Compile Include="Lang\LanguageString.cs" />
+    <Compile Include="Modem\DBQueue.cs" />
+    <Compile Include="Modem\ISMSQueue.cs" />
+    <Compile Include="Modem\ReceiveEventArgs.cs" />
+    <Compile Include="Modem\SentEventArgs.cs" />
+    <Compile Include="Modem\SMSController.cs" />
+    <Compile Include="Modem\SMSQueue.cs" />
+    <Compile Include="Modem\SMSSender.cs" />
+    <Compile Include="Modem\SMSSendInfo.cs" />
+    <Compile Include="Office\Excel\Cell.cs" />
+    <Compile Include="Office\Excel\Column.cs" />
+    <Compile Include="Office\Excel\Data.cs" />
+    <Compile Include="Office\Excel\Misc\DocumentProperties.cs" />
+    <Compile Include="Office\Excel\Excel.cs" />
+    <Compile Include="Office\Excel\Misc\ExcelWorkbook.cs" />
+    <Compile Include="Office\Excel\Misc\DocumentSettings.cs" />
+    <Compile Include="Office\Excel\Misc\Pane.cs" />
+    <Compile Include="Office\Excel\Row.cs" />
+    <Compile Include="Office\Excel\Styles\Alignment.cs" />
+    <Compile Include="Office\Excel\Styles\Borders.cs" />
+    <Compile Include="Office\Excel\Styles\Font.cs" />
+    <Compile Include="Office\Excel\Styles\Interior.cs" />
+    <Compile Include="Office\Excel\Styles\NumberFormat.cs" />
+    <Compile Include="Office\Excel\Styles\Protection.cs" />
+    <Compile Include="Office\Excel\Styles\Style.cs" />
+    <Compile Include="Office\Excel\Table.cs" />
+    <Compile Include="Office\Excel\Workbook.cs" />
+    <Compile Include="Office\Excel\Worksheet.cs" />
+    <Compile Include="Office\Excel\Misc\WorksheetOptions.cs" />
+    <Compile Include="Office\Project\Project.cs" />
+    <Compile Include="Office\Project\Resource.cs" />
+    <Compile Include="Office\Project\Task.cs" />
+    <Compile Include="Office\Project\TaskCollection.cs" />
+    <Compile Include="Office\Word\Word.cs" />
+    <Compile Include="Oray\OrayClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Event\ServiceStateEventArgs.cs" />
+    <Compile Include="Services\Event\ServiceTaskEventArgs.cs" />
+    <Compile Include="Services\Event\ServiceTaskExceptionEventArgs.cs" />
+    <Compile Include="Services\Installer\WinServiceInstaller.cs" />
+    <Compile Include="Services\Service\InternalService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\Service\Service.cs" />
+    <Compile Include="Services\Service\ServiceInfo.cs" />
+    <Compile Include="Services\Service\ServiceState.cs" />
+    <Compile Include="Services\Tasks\CyclicServiceTask.cs" />
+    <Compile Include="Services\Tasks\ScheduledServiceTask.cs" />
+    <Compile Include="Services\Tasks\ServiceTask.cs" />
+    <Compile Include="Update\NewVersionEventArgs.cs" />
+    <Compile Include="Update\Product.cs" />
+    <Compile Include="Update\Products.cs" />
+    <Compile Include="Update\UpdateConfig.cs" />
+    <Compile Include="Update\UpdateErrorArgs.cs" />
+    <Compile Include="Update\Updater.cs" />
+    <Compile Include="Update\UpdateResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThinkAway\ThinkAway.csproj">
+      <Project>{392A70D8-EE8A-4908-93BE-C2FE5A1BF27B}</Project>
+      <Name>ThinkAway</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Office\Excel\Core\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,735 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87FF9CFA-FBBB-43DB-BF7D-CFF907FEBD06}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ThinkAway</RootNamespace>
+    <AssemblyName>ThinkAway</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NET20</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NET20</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=5.1.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite, Version=1.0.60.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\IniConfig.cs" />
+    <Compile Include="Controls\Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CommandLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Dwm\DwmCompositionException.cs" />
+    <Compile Include="Controls\Dwm\DwmManager.cs" />
+    <Compile Include="Controls\Dwm\GlassHelper.cs" />
+    <Compile Include="Controls\Dwm\Thumbnail.cs" />
+    <Compile Include="Controls\Dwm\ThumbnailViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Forms\CrashReporter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Forms\CrashReporter.designer.cs">
+      <DependentUpon>CrashReporter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Forms\GlassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Forms\MessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Forms\MessageBox.designer.cs">
+      <DependentUpon>MessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GlassButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HorizontalPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LabeledDivider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LedDigital.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LoadingCircle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Renderers\GraphicsTools.cs" />
+    <Compile Include="Controls\Renderers\WindowsVistaColorTable.cs" />
+    <Compile Include="Controls\Renderers\WindowsVistaRenderer.cs" />
+    <Compile Include="Controls\ScrollingText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\VerticalPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\editors\CellEditor.cs" />
+    <Compile Include="Controls\xptable\editors\ColorCellEditor.cs" />
+    <Compile Include="Controls\xptable\editors\ComboBoxCellEditor.cs" />
+    <Compile Include="Controls\xptable\editors\DateTimeCellEditor.cs" />
+    <Compile Include="Controls\xptable\editors\DropDownCellEditor.cs" />
+    <Compile Include="Controls\xptable\editors\DropDownContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\editors\DropDownStyle.cs" />
+    <Compile Include="Controls\xptable\editors\EditStartAction.cs" />
+    <Compile Include="Controls\xptable\editors\ICellEditor.cs" />
+    <Compile Include="Controls\xptable\editors\IEditorUsesRendererButtons.cs" />
+    <Compile Include="Controls\xptable\editors\IKeyMessageFilterClient.cs" />
+    <Compile Include="Controls\xptable\editors\IMouseMessageFilterClient.cs" />
+    <Compile Include="Controls\xptable\editors\KeyMessageFilter.cs" />
+    <Compile Include="Controls\xptable\editors\MouseMessageFilter.cs" />
+    <Compile Include="Controls\xptable\editors\NumberCellEditor.cs" />
+    <Compile Include="Controls\xptable\editors\TextCellEditor.cs" />
+    <Compile Include="Controls\xptable\events\CellButtonEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\CellCheckBoxEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\CellEditEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\CellEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\CellEventArgsBase.cs" />
+    <Compile Include="Controls\xptable\events\CellEventType.cs" />
+    <Compile Include="Controls\xptable\events\CellFocusEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\CellKeyEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\CellMouseEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\ColumnEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\ColumnEventType.cs" />
+    <Compile Include="Controls\xptable\events\ColumnModelEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\HeaderMouseEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\PaintCellEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\PaintHeaderEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\RowEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\RowEventType.cs" />
+    <Compile Include="Controls\xptable\events\SelectionEventArgs.cs" />
+    <Compile Include="Controls\xptable\events\TableModelEventArgs.cs" />
+    <Compile Include="Controls\xptable\models\ButtonColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\Cell.cs" />
+    <Compile Include="Controls\xptable\models\CellCheckStyle.cs" />
+    <Compile Include="Controls\xptable\models\CellCollection.cs" />
+    <Compile Include="Controls\xptable\models\CellImageStyle.cs" />
+    <Compile Include="Controls\xptable\models\CellPadding.cs" />
+    <Compile Include="Controls\xptable\models\CellPos.cs" />
+    <Compile Include="Controls\xptable\models\CellStyle.cs" />
+    <Compile Include="Controls\xptable\models\CheckBoxColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\CheckBoxColumnStyle.cs" />
+    <Compile Include="Controls\xptable\models\ColorColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\Column.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\ColumnAlignment.cs" />
+    <Compile Include="Controls\xptable\models\ColumnCollection.cs" />
+    <Compile Include="Controls\xptable\models\ColumnModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\ColumnState.cs" />
+    <Compile Include="Controls\xptable\models\ComboBoxColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\DateTimeColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\design\CellCollectionEditor.cs" />
+    <Compile Include="Controls\xptable\models\design\CellConverter.cs" />
+    <Compile Include="Controls\xptable\models\design\ColumnCollectionEditor.cs" />
+    <Compile Include="Controls\xptable\models\design\HelpfulCollectionEditor.cs" />
+    <Compile Include="Controls\xptable\models\design\RowCollectionEditor.cs" />
+    <Compile Include="Controls\xptable\models\design\RowComparer.cs" />
+    <Compile Include="Controls\xptable\models\design\RowConverter.cs" />
+    <Compile Include="Controls\xptable\models\DropDownColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\GridLines.cs" />
+    <Compile Include="Controls\xptable\models\GridLineStyle.cs" />
+    <Compile Include="Controls\xptable\models\HeaderContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\ImageColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\ImageSizeMode.cs" />
+    <Compile Include="Controls\xptable\models\NumberColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\ProgressBarColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\Row.cs" />
+    <Compile Include="Controls\xptable\models\RowAlignment.cs" />
+    <Compile Include="Controls\xptable\models\RowCollection.cs" />
+    <Compile Include="Controls\xptable\models\RowStyle.cs" />
+    <Compile Include="Controls\xptable\models\SelectionStyle.cs" />
+    <Compile Include="Controls\xptable\models\Table.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\TableModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\models\TableRegion.cs" />
+    <Compile Include="Controls\xptable\models\TableState.cs" />
+    <Compile Include="Controls\xptable\models\TextColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\xptable\Renderers\ButtonCellRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\ButtonRendererData.cs" />
+    <Compile Include="Controls\xptable\Renderers\CellRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\CheckBoxCellRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\CheckBoxRendererData.cs" />
+    <Compile Include="Controls\xptable\Renderers\ColorCellRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\ComboBoxCellRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\DateTimeCellRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\DropDownCellRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\DropDownRendererData.cs" />
+    <Compile Include="Controls\xptable\Renderers\FlatHeaderRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\GradientHeaderRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\HeaderRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\ICellRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\IHeaderRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\ImageCellRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\IRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\NumberCellRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\NumberRendererData.cs" />
+    <Compile Include="Controls\xptable\Renderers\ProgressBarCellRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\Renderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\TextCellRenderer.cs" />
+    <Compile Include="Controls\xptable\Renderers\XPHeaderRenderer.cs" />
+    <Compile Include="Controls\xptable\Sorting\CheckBoxComparer.cs" />
+    <Compile Include="Controls\xptable\Sorting\ColorComparer.cs" />
+    <Compile Include="Controls\xptable\Sorting\ComparerBase.cs" />
+    <Compile Include="Controls\xptable\Sorting\DateTimeComparer.cs" />
+    <Compile Include="Controls\xptable\Sorting\HeapSorter.cs" />
+    <Compile Include="Controls\xptable\Sorting\ImageComparer.cs" />
+    <Compile Include="Controls\xptable\Sorting\InsertionSorter.cs" />
+    <Compile Include="Controls\xptable\Sorting\MergeSorter.cs" />
+    <Compile Include="Controls\xptable\Sorting\NumberComparer.cs" />
+    <Compile Include="Controls\xptable\Sorting\ShellSorter.cs" />
+    <Compile Include="Controls\xptable\Sorting\SorterBase.cs" />
+    <Compile Include="Controls\xptable\Sorting\TextComparer.cs" />
+    <Compile Include="Controls\xptable\Themes\ButtonParts.cs" />
+    <Compile Include="Controls\xptable\Themes\CheckBoxStates.cs" />
+    <Compile Include="Controls\xptable\Themes\ColumnHeaderParts.cs" />
+    <Compile Include="Controls\xptable\Themes\ColumnHeaderStates.cs" />
+    <Compile Include="Controls\xptable\Themes\ComboBoxParts.cs" />
+    <Compile Include="Controls\xptable\Themes\ComboBoxStates.cs" />
+    <Compile Include="Controls\xptable\Themes\ListViewParts.cs" />
+    <Compile Include="Controls\xptable\Themes\ListViewStates.cs" />
+    <Compile Include="Controls\xptable\Themes\ProgressBarParts.cs" />
+    <Compile Include="Controls\xptable\Themes\PushButtonStates.cs" />
+    <Compile Include="Controls\xptable\Themes\RadioButtonStates.cs" />
+    <Compile Include="Controls\xptable\Themes\ScrollBarParts.cs" />
+    <Compile Include="Controls\xptable\Themes\ScrollBarStates.cs" />
+    <Compile Include="Controls\xptable\Themes\TabParts.cs" />
+    <Compile Include="Controls\xptable\Themes\TextBoxParts.cs" />
+    <Compile Include="Controls\xptable\Themes\TextBoxStates.cs" />
+    <Compile Include="Controls\xptable\Themes\ThemeClasses.cs" />
+    <Compile Include="Controls\xptable\Themes\ThemeManager.cs" />
+    <Compile Include="Controls\xptable\Themes\UpDownParts.cs" />
+    <Compile Include="Controls\xptable\Themes\UpDownStates.cs" />
+    <Compile Include="Controls\xptable\Win32\AsciiChars.cs" />
+    <Compile Include="Controls\xptable\Win32\NativeWindow.cs" />
+    <Compile Include="Controls\xptable\Win32\POINT.cs" />
+    <Compile Include="Controls\xptable\Win32\SIZE.cs" />
+    <Compile Include="Controls\xptable\Win32\WindowExtendedStyles.cs" />
+    <Compile Include="Controls\xptable\Win32\WindowMessages.cs" />
+    <Compile Include="Controls\xptable\Win32\WindowStyles.cs" />
+    <Compile Include="Core\Convert.cs" />
+    <Compile Include="Core\Dictionary.cs" />
+    <Compile Include="Core\Enums.cs" />
+    <Compile Include="Core\Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Core\Extensions\StreamExtensions.cs" />
+    <Compile Include="Core\Invoker\IEventMessage.cs" />
+    <Compile Include="Core\Invoker\Intent.cs" />
+    <Compile Include="Core\Invoker\Invoker.cs" />
+    <Compile Include="Core\Invoker\Worker.cs" />
+    <Compile Include="Core\Mediator\Colleague.cs" />
+    <Compile Include="Core\Mediator\ColleagueDelegate.cs" />
+    <Compile Include="Core\Mediator\ConcreteMediator.cs" />
+    <Compile Include="Core\Mediator\IColleague.cs" />
+    <Compile Include="Core\Mediator\IMediator.cs" />
+    <Compile Include="Core\Mediator\Mediator.cs" />
+    <Compile Include="Core\MyDelegate.cs" />
+    <Compile Include="Core\OsSupport.cs" />
+    <Compile Include="Core\Permissions.cs" />
+    <Compile Include="Core\Result.cs" />
+    <Compile Include="Core\StateMachine\StateMachine.cs" />
+    <Compile Include="Core\StateMachine\StateMachineTask.cs" />
+    <Compile Include="Core\Structs.cs" />
+    <Compile Include="Core\SysRestore.cs" />
+    <Compile Include="Core\SystemMenu\NativeMethods.cs" />
+    <Compile Include="Core\SystemMenu\NativeWindow.cs" />
+    <Compile Include="Core\TaskTimer\TaskCycleType.cs" />
+    <Compile Include="Core\TaskTimer\TaskTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\Win32API.cs" />
+    <Compile Include="Data\Access\Access.cs" />
+    <Compile Include="Data\ContentValues.cs" />
+    <Compile Include="Data\Cursor.cs" />
+    <Compile Include="Data\DbException.cs" />
+    <Compile Include="Data\DbHelper.cs" />
+    <Compile Include="Data\IDbHelper.cs" />
+    <Compile Include="Data\MSSQL\MsSQL.cs" />
+    <Compile Include="Data\MySQL\MySQL.cs" />
+    <Compile Include="Data\Oracle\Oracle.cs" />
+    <Compile Include="Data\SQLite\SQLite.cs" />
+    <Compile Include="Data\TableValues.cs" />
+    <Compile Include="Drawing\Barcode\BarcodeFormat.cs" />
+    <Compile Include="Drawing\Barcode\Binarizer.cs" />
+    <Compile Include="Drawing\Barcode\BinaryBitmap.cs" />
+    <Compile Include="Drawing\Barcode\client\result\AbstractDoCoMoResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\AddressBookAUResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\AddressBookDoCoMoResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\AddressBookParsedResult.cs" />
+    <Compile Include="Drawing\Barcode\client\result\BizcardResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\BookmarkDoCoMoResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\CalendarParsedResult.cs" />
+    <Compile Include="Drawing\Barcode\client\result\EmailAddressParsedResult.cs" />
+    <Compile Include="Drawing\Barcode\client\result\EmailAddressResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\EmailDoCoMoResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\GeoParsedResult.cs" />
+    <Compile Include="Drawing\Barcode\client\result\GeoResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\ISBNParsedResult.cs" />
+    <Compile Include="Drawing\Barcode\client\result\ISBNResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\optional\AbstractNDEFResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\optional\NDEFRecord.cs" />
+    <Compile Include="Drawing\Barcode\client\result\optional\NDEFSmartPosterParsedResult.cs" />
+    <Compile Include="Drawing\Barcode\client\result\optional\NDEFSmartPosterResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\optional\NDEFTextResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\optional\NDEFURIResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\ParsedResult.cs" />
+    <Compile Include="Drawing\Barcode\client\result\ParsedResultType.cs" />
+    <Compile Include="Drawing\Barcode\client\result\ProductParsedResult.cs" />
+    <Compile Include="Drawing\Barcode\client\result\ProductResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\ResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\SMSMMSResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\SMSParsedResult.cs" />
+    <Compile Include="Drawing\Barcode\client\result\TelParsedResult.cs" />
+    <Compile Include="Drawing\Barcode\client\result\TelResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\TextParsedResult.cs" />
+    <Compile Include="Drawing\Barcode\client\result\URIParsedResult.cs" />
+    <Compile Include="Drawing\Barcode\client\result\URIResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\URLTOResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\VCardResultParser.cs" />
+    <Compile Include="Drawing\Barcode\client\result\VEventResultParser.cs" />
+    <Compile Include="Drawing\Barcode\common\BitArray.cs" />
+    <Compile Include="Drawing\Barcode\common\BitMatrix.cs" />
+    <Compile Include="Drawing\Barcode\common\BitSource.cs" />
+    <Compile Include="Drawing\Barcode\common\ByteArray.cs" />
+    <Compile Include="Drawing\Barcode\common\ByteMatrix.cs" />
+    <Compile Include="Drawing\Barcode\common\CharacterSetECI.cs" />
+    <Compile Include="Drawing\Barcode\common\Collections.cs" />
+    <Compile Include="Drawing\Barcode\common\Comparator.cs" />
+    <Compile Include="Drawing\Barcode\common\DecoderResult.cs" />
+    <Compile Include="Drawing\Barcode\common\DefaultGridSampler.cs" />
+    <Compile Include="Drawing\Barcode\common\DetectorResult.cs" />
+    <Compile Include="Drawing\Barcode\common\detector\MonochromeRectangleDetector.cs" />
+    <Compile Include="Drawing\Barcode\common\ECI.cs" />
+    <Compile Include="Drawing\Barcode\common\GlobalHistogramBinarizer.cs" />
+    <Compile Include="Drawing\Barcode\common\GridSampler.cs" />
+    <Compile Include="Drawing\Barcode\common\HybridBinarizer.cs" />
+    <Compile Include="Drawing\Barcode\common\PerspectiveTransform.cs" />
+    <Compile Include="Drawing\Barcode\common\reedsolomon\GF256.cs" />
+    <Compile Include="Drawing\Barcode\common\reedsolomon\GF256Poly.cs" />
+    <Compile Include="Drawing\Barcode\common\reedsolomon\ReedSolomonDecoder.cs" />
+    <Compile Include="Drawing\Barcode\common\reedsolomon\ReedSolomonEncoder.cs" />
+    <Compile Include="Drawing\Barcode\common\reedsolomon\ReedSolomonException.cs" />
+    <Compile Include="Drawing\Barcode\datamatrix\DataMatrixReader.cs" />
+    <Compile Include="Drawing\Barcode\datamatrix\decoder\BitMatrixParser.cs" />
+    <Compile Include="Drawing\Barcode\datamatrix\decoder\DataBlock.cs" />
+    <Compile Include="Drawing\Barcode\datamatrix\decoder\DecodedBitStreamParser.cs" />
+    <Compile Include="Drawing\Barcode\datamatrix\decoder\Decoder.cs" />
+    <Compile Include="Drawing\Barcode\datamatrix\decoder\Version.cs" />
+    <Compile Include="Drawing\Barcode\datamatrix\detector\Detector.cs" />
+    <Compile Include="Drawing\Barcode\DecodeHintType.cs" />
+    <Compile Include="Drawing\Barcode\EncodeHintType.cs" />
+    <Compile Include="Drawing\Barcode\LuminanceSource.cs" />
+    <Compile Include="Drawing\Barcode\MultiFormatReader.cs" />
+    <Compile Include="Drawing\Barcode\MultiFormatWriter.cs" />
+    <Compile Include="Drawing\Barcode\multi\ByQuadrantReader.cs" />
+    <Compile Include="Drawing\Barcode\multi\GenericMultipleBarcodeReader.cs" />
+    <Compile Include="Drawing\Barcode\multi\MultipleBarcodeReader.cs" />
+    <Compile Include="Drawing\Barcode\multi\qrcode\detector\MultiDetector.cs" />
+    <Compile Include="Drawing\Barcode\multi\qrcode\detector\MultiFinderPatternFinder.cs" />
+    <Compile Include="Drawing\Barcode\multi\qrcode\QRCodeMultiReader.cs" />
+    <Compile Include="Drawing\Barcode\oned\Code128Reader.cs" />
+    <Compile Include="Drawing\Barcode\oned\Code39Reader.cs" />
+    <Compile Include="Drawing\Barcode\oned\Code39Writer.cs" />
+    <Compile Include="Drawing\Barcode\oned\EAN13Reader.cs" />
+    <Compile Include="Drawing\Barcode\oned\EAN13Writer.cs" />
+    <Compile Include="Drawing\Barcode\oned\EAN8Reader.cs" />
+    <Compile Include="Drawing\Barcode\oned\EAN8Writer.cs" />
+    <Compile Include="Drawing\Barcode\oned\ITFReader.cs" />
+    <Compile Include="Drawing\Barcode\oned\MultiFormatOneDReader.cs" />
+    <Compile Include="Drawing\Barcode\oned\MultiFormatUPCEANReader.cs" />
+    <Compile Include="Drawing\Barcode\oned\OneDReader.cs" />
+    <Compile Include="Drawing\Barcode\oned\UPCAReader.cs" />
+    <Compile Include="Drawing\Barcode\oned\UPCEANReader.cs" />
+    <Compile Include="Drawing\Barcode\oned\UPCEANWriter.cs" />
+    <Compile Include="Drawing\Barcode\oned\UPCEReader.cs" />
+    <Compile Include="Drawing\Barcode\pdf417\decoder\BitMatrixParser.cs" />
+    <Compile Include="Drawing\Barcode\pdf417\decoder\DecodedBitStreamParser.cs" />
+    <Compile Include="Drawing\Barcode\pdf417\decoder\Decoder.cs" />
+    <Compile Include="Drawing\Barcode\pdf417\detector\Detector.cs" />
+    <Compile Include="Drawing\Barcode\pdf417\PDF417Reader.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\decoder\BitMatrixParser.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\decoder\DataBlock.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\decoder\DataMask.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\decoder\DecodedBitStreamParser.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\decoder\Decoder.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\decoder\ErrorCorrectionLevel.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\decoder\FormatInformation.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\decoder\Mode.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\decoder\Version.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\detector\AlignmentPattern.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\detector\AlignmentPatternFinder.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\detector\Detector.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\detector\FinderPattern.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\detector\FinderPatternFinder.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\detector\FinderPatternInfo.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\encoder\BitVector.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\encoder\BlockPair.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\encoder\Encoder.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\encoder\MaskUtil.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\encoder\MatrixUtil.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\encoder\QRCode.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\QRCodeReader.cs" />
+    <Compile Include="Drawing\Barcode\qrcode\QRCodeWriter.cs" />
+    <Compile Include="Drawing\Barcode\QRHelper.cs" />
+    <Compile Include="Drawing\Barcode\Reader.cs" />
+    <Compile Include="Drawing\Barcode\ReaderException.cs" />
+    <Compile Include="Drawing\Barcode\Result.cs" />
+    <Compile Include="Drawing\Barcode\ResultMetadataType.cs" />
+    <Compile Include="Drawing\Barcode\ResultPoint.cs" />
+    <Compile Include="Drawing\Barcode\ResultPointCallback.cs" />
+    <Compile Include="Drawing\Barcode\RGBLuminanceSource.cs" />
+    <Compile Include="Drawing\Barcode\SupportClass.cs" />
+    <Compile Include="Drawing\Barcode\Writer.cs" />
+    <Compile Include="Drawing\Barcode\WriterException.cs" />
+    <Compile Include="Drawing\ColorFunctions.cs" />
+    <Compile Include="Drawing\ImageHelper.cs" />
+    <Compile Include="IO\FileHelper.cs" />
+    <Compile Include="IO\FileSearch.cs" />
+    <Compile Include="IO\FileSplit.cs" />
+    <Compile Include="IO\Log\ILog.cs" />
+    <Compile Include="IO\Log\LogConfig.cs" />
+    <Compile Include="IO\Log\LogFilter.cs" />
+    <Compile Include="IO\Log\Logger.cs" />
+    <Compile Include="IO\Log\LogLevel.cs" />
+    <Compile Include="IO\Log\LogMode.cs" />
+    <Compile Include="IO\Modem\GSMModem.cs" />
+    <Compile Include="IO\Modem\SMSEventArgs.cs" />
+    <Compile Include="IO\Modem\SMSInfo.cs" />
+    <Compile Include="IO\StreamHelper.cs" />
+    <Compile Include="IO\ZipLib\BZip2\BZip2.cs" />
+    <Compile Include="IO\ZipLib\BZip2\BZip2Constants.cs" />
+    <Compile Include="IO\ZipLib\BZip2\BZip2Exception.cs" />
+    <Compile Include="IO\ZipLib\BZip2\BZip2InputStream.cs" />
+    <Compile Include="IO\ZipLib\BZip2\BZip2OutputStream.cs" />
+    <Compile Include="IO\ZipLib\Checksums\Adler32.cs" />
+    <Compile Include="IO\ZipLib\Checksums\CRC32.cs" />
+    <Compile Include="IO\ZipLib\Checksums\IChecksum.cs" />
+    <Compile Include="IO\ZipLib\Checksums\StrangeCRC.cs" />
+    <Compile Include="IO\ZipLib\Core\FileSystemScanner.cs" />
+    <Compile Include="IO\ZipLib\Core\INameTransform.cs" />
+    <Compile Include="IO\ZipLib\Core\IScanFilter.cs" />
+    <Compile Include="IO\ZipLib\Core\NameFilter.cs" />
+    <Compile Include="IO\ZipLib\Core\PathFilter.cs" />
+    <Compile Include="IO\ZipLib\Core\StreamUtils.cs" />
+    <Compile Include="IO\ZipLib\Core\WindowsPathUtils.cs" />
+    <Compile Include="IO\ZipLib\Encryption\PkzipClassic.cs" />
+    <Compile Include="IO\ZipLib\GZip\GZIPConstants.cs" />
+    <Compile Include="IO\ZipLib\GZip\GZipException.cs" />
+    <Compile Include="IO\ZipLib\GZip\GzipInputStream.cs" />
+    <Compile Include="IO\ZipLib\GZip\GzipOutputStream.cs" />
+    <Compile Include="IO\ZipLib\Tar\InvalidHeaderException.cs" />
+    <Compile Include="IO\ZipLib\Tar\TarArchive.cs" />
+    <Compile Include="IO\ZipLib\Tar\TarBuffer.cs" />
+    <Compile Include="IO\ZipLib\Tar\TarEntry.cs" />
+    <Compile Include="IO\ZipLib\Tar\TarException.cs" />
+    <Compile Include="IO\ZipLib\Tar\TarHeader.cs" />
+    <Compile Include="IO\ZipLib\Tar\TarInputStream.cs" />
+    <Compile Include="IO\ZipLib\Tar\TarOutputStream.cs" />
+    <Compile Include="IO\ZipLib\ZipLibBaseException.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\Deflater.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\DeflaterConstants.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\DeflaterEngine.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\DeflaterHuffman.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\DeflaterPending.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\Inflater.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\InflaterDynHeader.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\InflaterHuffmanTree.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\PendingBuffer.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\Streams\OutputWindow.cs" />
+    <Compile Include="IO\ZipLib\Zip\Compression\Streams\StreamManipulator.cs" />
+    <Compile Include="IO\ZipLib\Zip\FastZip.cs" />
+    <Compile Include="IO\ZipLib\Zip\IEntryFactory.cs" />
+    <Compile Include="IO\ZipLib\Zip\WindowsNameTransform.cs" />
+    <Compile Include="IO\ZipLib\Zip\ZipConstants.cs" />
+    <Compile Include="IO\ZipLib\Zip\ZipEntry.cs" />
+    <Compile Include="IO\ZipLib\Zip\ZipEntryFactory.cs" />
+    <Compile Include="IO\ZipLib\Zip\ZipException.cs" />
+    <Compile Include="IO\ZipLib\Zip\ZipExtraData.cs" />
+    <Compile Include="IO\ZipLib\Zip\ZipFile.cs" />
+    <Compile Include="IO\ZipLib\Zip\ZipHelperStream.cs" />
+    <Compile Include="IO\ZipLib\Zip\ZipInputStream.cs" />
+    <Compile Include="IO\ZipLib\Zip\ZipNameTransform.cs" />
+    <Compile Include="IO\ZipLib\Zip\ZipOutputStream.cs" />
+    <Compile Include="Media\Audio\CloseFileEventArgs.cs" />
+    <Compile Include="Media\Audio\ErrorEventArgs.cs" />
+    <Compile Include="Media\Audio\Mp3Player.cs" />
+    <Compile Include="Media\Audio\OpenFileEventArgs.cs" />
+    <Compile Include="Media\Audio\PauseFileEventArgs.cs" />
+    <Compile Include="Media\Audio\PlayFileEventArgs.cs" />
+    <Compile Include="Media\Audio\StopFileEventArgs.cs" />
+    <Compile Include="Media\Tag\Mp3TagID3V1.cs" />
+    <Compile Include="Net\FTP\FTPClient.cs" />
+    <Compile Include="Net\FTP\FTPMode.cs" />
+    <Compile Include="Net\FTP\FTPType.cs" />
+    <Compile Include="Net\Http\GoogleAPI.cs" />
+    <Compile Include="Net\Http\HttpClient.cs" />
+    <Compile Include="Net\Http\HttpMethod.cs" />
+    <Compile Include="Net\Http\Parameters.cs" />
+    <Compile Include="Net\Http\ProtocolType.cs" />
+    <Compile Include="Net\Http\RequestHeader.cs" />
+    <Compile Include="Net\Http\ResponseObject.cs" />
+    <Compile Include="Net\Http\StreamWriteContext.cs" />
+    <Compile Include="Net\Http\UrlBuilder.cs" />
+    <Compile Include="Net\Http\UrlParameter.cs" />
+    <Compile Include="Net\Http\WebClient\WebClient.cs" />
+    <Compile Include="Net\Http\WebHelper.cs" />
+    <Compile Include="Net\Http\WebRequest.cs" />
+    <Compile Include="Net\Http\WebResponse.cs" />
+    <Compile Include="Net\Http\WebServer\WebServer.cs" />
+    <Compile Include="Net\Http\WebServer\WebServerHandler.cs" />
+    <Compile Include="Net\Http\WebServer\WebServerRequest.cs" />
+    <Compile Include="Net\Http\WebServer\WebServerResponse.cs" />
+    <Compile Include="Net\IRCBot.cs" />
+    <Compile Include="Net\Mail\Exceptions\InvalidLoginException.cs" />
+    <Compile Include="Net\Mail\Exceptions\InvalidUseException.cs" />
+    <Compile Include="Net\Mail\Exceptions\LoginDelayException.cs" />
+    <Compile Include="Net\Mail\Exceptions\MalformedAddressException.cs" />
+    <Compile Include="Net\Mail\Exceptions\ParseException.cs" />
+    <Compile Include="Net\Mail\Exceptions\PopClientException.cs" />
+    <Compile Include="Net\Mail\Exceptions\PopServerException.cs" />
+    <Compile Include="Net\Mail\Exceptions\PopServerLockedException.cs" />
+    <Compile Include="Net\Mail\Exceptions\PopServerNotAvailableException.cs" />
+    <Compile Include="Net\Mail\Exceptions\PopServerNotFoundException.cs" />
+    <Compile Include="Net\Mail\Exceptions\SmtpException.cs" />
+    <Compile Include="Net\Mail\IMAP\Imap.cs" />
+    <Compile Include="Net\Mail\IMAP\ImapBase.cs" />
+    <Compile Include="Net\Mail\IMAP\ImapClient.cs" />
+    <Compile Include="Net\Mail\IMAP\ImapException.cs" />
+    <Compile Include="Net\Mail\MailAddress.cs" />
+    <Compile Include="Net\Mail\MailMessage.cs" />
+    <Compile Include="Net\Mail\POP3\Apop.cs" />
+    <Compile Include="Net\Mail\POP3\AuthMethod.cs" />
+    <Compile Include="Net\Mail\POP3\ConnectionState.cs" />
+    <Compile Include="Net\Mail\POP3\CramMd5.cs" />
+    <Compile Include="Net\Mail\POP3\Disposable.cs" />
+    <Compile Include="Net\Mail\POP3\Header\ContentTransferEncoding.cs" />
+    <Compile Include="Net\Mail\POP3\Header\HeaderExtractor.cs" />
+    <Compile Include="Net\Mail\POP3\Header\HeaderFieldParser.cs" />
+    <Compile Include="Net\Mail\POP3\Header\MessageHeader.cs" />
+    <Compile Include="Net\Mail\POP3\MessagePart.cs" />
+    <Compile Include="Net\Mail\POP3\PopClient.cs" />
+    <Compile Include="Net\Mail\POP3\Traverse\AnswerMessageTraverser.cs" />
+    <Compile Include="Net\Mail\POP3\Traverse\AttachmentFinder.cs" />
+    <Compile Include="Net\Mail\POP3\Traverse\FindAllMessagePartsWithMediaType.cs" />
+    <Compile Include="Net\Mail\POP3\Traverse\FindFirstMessagePartWithMediaType.cs" />
+    <Compile Include="Net\Mail\POP3\Traverse\IAnswerMessageTraverser.cs" />
+    <Compile Include="Net\Mail\POP3\Traverse\IQuestionAnswerMessageTraverser.cs" />
+    <Compile Include="Net\Mail\POP3\Traverse\MultipleMessagePartFinder.cs" />
+    <Compile Include="Net\Mail\POP3\Traverse\TextVersionFinder.cs" />
+    <Compile Include="Net\Mail\SMTP\AddressType.cs" />
+    <Compile Include="Net\Mail\SMTP\Attachment.cs" />
+    <Compile Include="Net\Mail\SMTP\MailHeader.cs" />
+    <Compile Include="Net\Mail\SMTP\MailMessage.cs" />
+    <Compile Include="Net\Mail\SMTP\MailPriority.cs" />
+    <Compile Include="Net\Mail\SMTP\ReplyConstants.cs" />
+    <Compile Include="Net\Mail\SMTP\SmtpClient.cs" />
+    <Compile Include="Net\Monitor\NetworkAdapter.cs" />
+    <Compile Include="Net\Monitor\NetworkMonitor.cs" />
+    <Compile Include="Net\OAuth\AccessTokenInfo.cs" />
+    <Compile Include="Net\OAuth\AuthorizeInfo.cs" />
+    <Compile Include="Net\OAuth\OAuthBase.cs" />
+    <Compile Include="Net\OAuth\OAuthClient.AsyncCall.cs" />
+    <Compile Include="Net\OAuth\OAuthClient.cs" />
+    <Compile Include="Net\OAuth\OAuthClient.InnerClass.cs" />
+    <Compile Include="Net\OAuth\OAuthClient.Static.cs" />
+    <Compile Include="Net\OAuth\OAuthClient.SyncCall.cs" />
+    <Compile Include="Net\OAuth\OAuthMode.cs" />
+    <Compile Include="Net\OAuth\SignatureInfo.cs" />
+    <Compile Include="Net\Sockets\AppClient.cs" />
+    <Compile Include="Net\Sockets\AppServer.cs" />
+    <Compile Include="Net\Sockets\AppSession.cs" />
+    <Compile Include="Net\Sockets\ConnectedEventArgs.cs" />
+    <Compile Include="Net\Sockets\DisconnectedEventArgs.cs" />
+    <Compile Include="Net\Sockets\IAppSession.cs" />
+    <Compile Include="Net\Sockets\ReveivedEventArgs.cs" />
+    <Compile Include="Net\Sockets\SessionEventArgs.cs" />
+    <Compile Include="Net\Sockets\SessionManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="README.cs" />
+    <Compile Include="Security\AES.cs" />
+    <Compile Include="Security\CRC.cs" />
+    <Compile Include="Security\DES.cs" />
+    <Compile Include="Security\MD5.cs" />
+    <Compile Include="Security\SHA1.cs" />
+    <Compile Include="Text\Base64.cs" />
+    <Compile Include="Text\Json\JsonConvert.cs" />
+    <Compile Include="Text\Json\JsonObject.cs" />
+    <Compile Include="Text\Json\JsonReader.cs" />
+    <Compile Include="Text\MIME\ABNF.cs" />
+    <Compile Include="Text\MIME\DecodeOptions.cs" />
+    <Compile Include="Text\MIME\Decode\EncodedWord.cs" />
+    <Compile Include="Text\MIME\Decode\QuotedPrintable.cs" />
+    <Compile Include="Text\MIME\Decode\Rfc2231Decoder.cs" />
+    <Compile Include="Text\MIME\Decode\Rfc2822DateTime.cs" />
+    <Compile Include="Text\MIME\Encode\MailEncoder.cs" />
+    <Compile Include="Text\MIME\MimeAddress.cs" />
+    <Compile Include="Text\MIME\MimeAddressCollection.cs" />
+    <Compile Include="Text\MIME\MimeHeader.cs" />
+    <Compile Include="Text\MIME\MimeMessage.cs" />
+    <Compile Include="Text\MIME\MimeMessageCollection.cs" />
+    <Compile Include="Text\MIME\MimeMessageStream.cs" />
+    <Compile Include="Text\MIME\MimeTools.cs" />
+    <Compile Include="Text\MIME\MimeTopLevelMediaType.cs" />
+    <Compile Include="Text\MIME\SharpMessage.cs" />
+    <Compile Include="Text\MIME\TnefMessage.cs" />
+    <Compile Include="Text\PDU\PDUDecoder.cs" />
+    <Compile Include="Text\PDU\PDUEncoder.cs" />
+    <Compile Include="Text\SQL\SqlHelper.cs" />
+    <Compile Include="Text\StringHelper.cs" />
+    <Compile Include="Text\StringValueAttribute.cs" />
+    <Compile Include="Text\StringValueExtension.cs" />
+    <Compile Include="Text\Xml\XmlAttribute.cs" />
+    <Compile Include="Text\Xml\XmlAttributeCollection.cs" />
+    <Compile Include="Text\Xml\XmlData.cs" />
+    <Compile Include="Text\Xml\XmlDocument.cs" />
+    <Compile Include="Text\Xml\XmlElement.cs" />
+    <Compile Include="Text\Xml\XmlElementCollection.cs" />
+    <Compile Include="Text\Xml\XmlExtensions.cs" />
+    <Compile Include="Text\Xml\XmlNamespace.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Forms\CrashReporter.resx">
+      <DependentUpon>CrashReporter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Forms\MessageBox.resx">
+      <DependentUpon>MessageBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\xptable\editors\DropDownContainer.resx">
+      <DependentUpon>DropDownContainer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\xptable\models\Table.resx">
+      <DependentUpon>Table.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\xptable\models\TableModel.resx">
+      <DependentUpon>TableModel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controls\Renderers\vssver2.scc" />
+    <None Include="Controls\xptable\editors\vssver2.scc" />
+    <None Include="Controls\xptable\events\vssver2.scc" />
+    <None Include="Controls\xptable\models\design\vssver2.scc" />
+    <None Include="Controls\xptable\models\vssver2.scc" />
+    <None Include="Controls\xptable\Renderers\vssver2.scc" />
+    <None Include="Controls\xptable\Sorting\vssver2.scc" />
+    <None Include="Controls\xptable\Themes\vssver2.scc" />
+    <None Include="Controls\xptable\Win32\vssver2.scc" />
+    <None Include="IO\ZipLib\BZip2\vssver2.scc" />
+    <None Include="IO\ZipLib\Checksums\vssver2.scc" />
+    <None Include="IO\ZipLib\Core\vssver2.scc" />
+    <None Include="IO\ZipLib\Encryption\vssver2.scc" />
+    <None Include="IO\ZipLib\GZip\vssver2.scc" />
+    <None Include="IO\ZipLib\Tar\vssver2.scc" />
+    <None Include="IO\ZipLib\Zip\Compression\Streams\vssver2.scc" />
+    <None Include="IO\ZipLib\Zip\Compression\vssver2.scc" />
+    <None Include="Net\Mail\MailMessage.cs.bak" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\xptable\models\ColumnModel.bmp" />
+    <Content Include="Controls\xptable\models\Table.bmp" />
+    <Content Include="Controls\xptable\models\TableModel.bmp" />
+    <Content Include="Libs\MySql.Data.dll" />
+    <Content Include="Libs\System.Data.SQLite.dll" />
+    <Content Include="License.txt" />
+    <Content Include="README.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
